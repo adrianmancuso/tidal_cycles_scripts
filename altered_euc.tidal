@@ -1,0 +1,33 @@
+-- Reverb experiments with euclid patterns
+do
+  d1
+    $ sound "drums(7,8)"
+      # pan (fast 1.7 $ tri)
+      # crush (range 5 8 $ density 5 $ saw)
+      # room (irand 5)
+      # cut "3"
+  d2
+    $ euclid 10 16
+    $ sound "blip birds3"
+      # n (irand 15)
+      # cutoff (range 1800 19200 $ density (range 1 24 $ tri) $ saw)
+      # resonance "0.4"
+      # room (range 0 3.2 $ fast 5 $ tri)
+      # gain (irand 2)
+  d3
+      $ sound "bd(5,8)"
+        # pan (slow 4.7 $ tri)
+        # crush (range 1 18 $ density 3 $ saw)
+        # room (irand 15)
+        -- # cut "3"
+        # cut "4"
+
+-- Drawn-out Riddims
+do
+  d5
+    $ sound "[rave:3*16!7 [casio:2*8 808:8*8]]/8"
+    # cut "2 4 5"
+    # gain "0.5"
+    # room (range 0 0.8 $ density 5 $ sine)
+    # cutoff (range 1800 9200 $ density (range 1 24 $ tri) $ saw)
+    # resonance "0.2"
